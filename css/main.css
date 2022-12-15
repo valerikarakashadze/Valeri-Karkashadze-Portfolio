@@ -1,29 +1,4 @@
-/*!
 
- =========================================================
- * Now-ui-kit - v1.1.0
- =========================================================
-
- * Product Page: http://www.creative-tim.com/product/now-ui-kit
- * Copyright 2017 Creative Tim (http://www.creative-tim.com)
- * Licensed under MIT (https://github.com/creativetimofficial/now-ui-kit/blob/master/LICENSE.md)
-
- * Designed by www.invisionapp.com Coded by www.creative-tim.com
-
- =========================================================
-
- * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
- */
-/*     brand Colors              */
-/*      light colors         */
-/* ========================================================================
- * bootstrap-switch - v3.3.2
- * http://www.bootstrap-switch.org
- * ========================================================================
- * Copyright 2012-2013 Mattia Larentis
- * http://www.apache.org/licenses/LICENSE-2.0
- */
 .bootstrap-switch {
   display: inline-block;
   direction: ltr;
@@ -5284,3 +5259,38 @@ a.credit {
 /* Common Style */
 .section {
   padding-bottom: 0; }
+.cursor{
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #c6c6c6;
+    border-radius: 50%;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: .1s;
+  }
+  
+  .cursor2{
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background-color: #c6c6c6;
+    border-radius: 50%;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: .15s;
+  }
+  
+  .content:hover ~ .cursor{
+    transform: translate(-50%, -50%) scale(1.5);
+    background-color: #c6c6c6;
+    opacity: .5;
+  }
+  
+  .content:hover ~ .cursor2{
+    opacity: 0;
+  }
