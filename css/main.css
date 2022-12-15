@@ -1,5 +1,4 @@
-
-.bootstrap-switch {
+trap-switch {
   display: inline-block;
   direction: ltr;
   cursor: pointer;
@@ -55,7 +54,7 @@
 .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-brown,
 .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-brown {
   color: #fff;
-  background: #378C3F; }
+  background: #3255f1; }
 
 .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-blue,
 .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-blue {
@@ -1229,13 +1228,13 @@
     top: 1px; }
 
 .btn-primary {
-  background-color: #378C3F;
+  background-color: #1c52c7;
   color: #FFFFFF; }
   .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .btn-primary:active:focus, .btn-primary:active:hover, .btn-primary.active:focus, .btn-primary.active:hover,
   .show > .btn-primary.dropdown-toggle,
   .show > .btn-primary.dropdown-toggle:focus,
   .show > .btn-primary.dropdown-toggle:hover {
-    background-color: #40a249;
+    background-color: #1c52c7;
     color: #FFFFFF;
     box-shadow: none; }
   .btn-primary:hover {
@@ -1247,32 +1246,32 @@
   fieldset[disabled] .btn-primary.focus,
   fieldset[disabled] .btn-primary:active,
   fieldset[disabled] .btn-primary.active {
-    background-color: #378C3F;
-    border-color: #378C3F; }
+    background-color: #1c52c7;
+    border-color: #1c52c7; }
   .btn-primary.btn-simple {
-    color: #378C3F;
-    border-color: #378C3F; }
+    color: #1c52c7;
+    border-color: #1c52c7; }
     .btn-primary.btn-simple:hover, .btn-primary.btn-simple:focus, .btn-primary.btn-simple:active {
       background-color: transparent;
-      color: #40a249;
-      border-color: #40a249;
+      color: #1c52c7;
+      border-color: #1c52c7;
       box-shadow: none; }
   .btn-primary.btn-link {
-    color: #378C3F; }
+    color: #1c52c7; }
     .btn-primary.btn-link:hover, .btn-primary.btn-link:focus, .btn-primary.btn-link:active {
       background-color: transparent;
-      color: #40a249;
+      color: #1c52c7;
       text-decoration: none;
       box-shadow: none; }
 
 .btn-success {
-  background-color: #18ce0f;
+  background-color: #1c52c7;
   color: #FFFFFF; }
   .btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .btn-success:active:focus, .btn-success:active:hover, .btn-success.active:focus, .btn-success.active:hover,
   .show > .btn-success.dropdown-toggle,
   .show > .btn-success.dropdown-toggle:focus,
   .show > .btn-success.dropdown-toggle:hover {
-    background-color: #1beb11;
+    background-color: #1c52c7;
     color: #FFFFFF;
     box-shadow: none; }
   .btn-success:hover {
@@ -1284,21 +1283,21 @@
   fieldset[disabled] .btn-success.focus,
   fieldset[disabled] .btn-success:active,
   fieldset[disabled] .btn-success.active {
-    background-color: #18ce0f;
-    border-color: #18ce0f; }
+    background-color: #1c52c7;
+    border-color: #1c52c7; }
   .btn-success.btn-simple {
-    color: #18ce0f;
-    border-color: #18ce0f; }
+    color: #1c52c7;
+    border-color: #1c52c7; }
     .btn-success.btn-simple:hover, .btn-success.btn-simple:focus, .btn-success.btn-simple:active {
       background-color: transparent;
-      color: #1beb11;
-      border-color: #1beb11;
+      color: #1c52c7;
+      border-color: #1c52c7;
       box-shadow: none; }
   .btn-success.btn-link {
-    color: #18ce0f; }
+    color: #1c52c7; }
     .btn-success.btn-link:hover, .btn-success.btn-link:focus, .btn-success.btn-link:active {
       background-color: transparent;
-      color: #1beb11;
+      color: #1c52c7;
       text-decoration: none;
       box-shadow: none; }
 
@@ -2630,7 +2629,7 @@ body {
   .dropdown-menu.dropdown-primary {
     background-color: #33813a; }
     .dropdown-menu.dropdown-primary:before {
-      color: #33813a; }
+      color: #2652e4; }
     .dropdown-menu.dropdown-primary .dropdown-header:not([href]):not([tabindex]) {
       color: rgba(255, 255, 255, 0.8); }
     .dropdown-menu.dropdown-primary .dropdown-item {
@@ -5259,7 +5258,9 @@ a.credit {
 /* Common Style */
 .section {
   padding-bottom: 0; }
-.cursor{
+
+
+  .cursor{
     position: fixed;
     width: 50px;
     height: 50px;
