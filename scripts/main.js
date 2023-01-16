@@ -1,11 +1,16 @@
-// Add your javascript here
-// Don't forget to add it into respective layouts where this js file is needed
+let pageTitle = document.title;
+window.addEventListener("blur", () => {
+    document.title = "Come back here";
+});
+window.addEventListener("focus", () => {
+    document.title = pageTitle;
+})
+
 
 $(document).ready(function() {
   AOS.init( {
-    // uncomment below for on-scroll animations to played only once
-    // once: true  
-  }); // initialize animate on scroll library
+   
+  }); 
 });
 
 // Smooth scroll for links with hashes
