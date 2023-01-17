@@ -1228,7 +1228,8 @@ trap-switch {
     top: 1px; }
 
 .btn-primary {
-  background-color: #1c52c7;
+  background: rgb(34,78,195);
+  background: linear-gradient(0deg, rgba(34,78,195,0.908000700280112) 0%, rgba(45,253,205,0.927608543417367) 100%);;
   color: #FFFFFF; }
   .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .btn-primary:active:focus, .btn-primary:active:hover, .btn-primary.active:focus, .btn-primary.active:hover,
   .show > .btn-primary.dropdown-toggle,
@@ -2014,10 +2015,11 @@ textarea.form-control {
   .progress-container.progress-primary .progress {
     background: rgba(55, 140, 63, 0.4); }
   .progress-container.progress-primary .progress-bar {
-    background: #378C3F; }
+    background: rgb(54,47,148);
+    background: linear-gradient(147deg, rgba(54,47,148,1) 28%, rgba(9,75,121,1) 51%, rgba(0,212,255,1) 100%);; }
   .progress-container.progress-primary .progress-value,
   .progress-container.progress-primary .progress-badge {
-    color: #378C3F; }
+    color: #000000; }
   .progress-container.progress-info .progress {
     background: rgba(44, 168, 255, 0.3); }
   .progress-container.progress-info .progress-bar {
@@ -2572,7 +2574,8 @@ body {
   background-color: #888 !important; }
 
 .bg-primary {
-  background-color: #378C3F !important; }
+  background: rgb(54,47,148);
+  background: linear-gradient(147deg, rgba(54,47,148,1) 28%, rgba(9,75,121,1) 51%, rgba(0,212,255,1) 100%) !important; }
 
 .bg-info {
   background-color: #2CA8FF !important; }
@@ -3817,7 +3820,6 @@ Created using IcoMoon - icomoon.io
     /* For Safari 5.1 to 6.0 */
     /* For Opera 11.1 to 12.0 */
     /* For Firefox 3.6 to 15 */
-    background: linear-gradient(0deg, rgba(44, 44, 44, 0.2), rgba(224, 23, 3, 0.6));
     /* Standard syntax */ }
   .page-header .container {
     z-index: 2; }
@@ -4106,12 +4108,11 @@ Created using IcoMoon - icomoon.io
     transform: translate3d(300px, 0, 0);
     transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1); }
     .sidebar-collapse .navbar-collapse:before {
-      background: #378C3F;
+      background:linear-gradient(147deg, rgba(54,47,148,1) 28%, rgba(9,75,121,1) 51%, rgba(0,212,255,1) 100%);
       /* For browsers that do not support gradients */
       /* For Safari 5.1 to 6.0 */
       /* For Opera 11.1 to 12.0 */
       /* For Firefox 3.6 to 15 */
-      background: linear-gradient(#378C3F 0%, #000 80%);
       /* Standard syntax (must be last) */
       opacity: 0.76;
       filter: alpha(opacity=76);
@@ -5127,7 +5128,7 @@ Created using IcoMoon - icomoon.io
 
 .cc-profile-image a:before {
   content: "";
-  border: 15px solid rgba(55, 140, 63, 0.6);
+  border: 15px solid #2464ef;
   border-radius: 50%;
   height: 180px;
   width: 180px;
@@ -5227,7 +5228,9 @@ Created using IcoMoon - icomoon.io
 .cc-contact-information {
   width: 100%;
   position: relative;
-  overflow: hidden; }
+  overflow: hidden;
+  background-size: cover;
+  background:linear-gradient(147deg, rgba(54,47,148,1) 28%, rgba(9,75,121,1) 51%, rgba(0,212,255,1) 100%);}
   .cc-contact-information .cc-contact {
     padding: 8% 0 8% 20%; }
     @media (max-width: 767px) {
