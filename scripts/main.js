@@ -7,6 +7,22 @@ window.addEventListener("focus", () => {
 })
 
 
+document.addEventListener("DOMContentLoaded", function(){
+  const ageDisplay = document.getElementById("age");
+
+  function calculateAge() {
+    const birthday = new Date("2002-05-06");
+    const ageInMilliseconds = Date.now() - birthday.getTime();
+    const ageInYears = ageInMilliseconds / 31536000000;
+    ageDisplay.innerHTML = Math.floor(ageInYears);
+  }
+
+  calculateAge();
+  setInterval(calculateAge, 31536000000);
+});
+
+
+
 $(document).ready(function() {
   AOS.init( {
    
