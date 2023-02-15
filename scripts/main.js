@@ -1,6 +1,6 @@
 let pageTitle = document.title;
 window.addEventListener("blur", () => {
-    document.title = "Come back here";
+    document.title = "Hire Me";
 });
 window.addEventListener("focus", () => {
     document.title = pageTitle;
