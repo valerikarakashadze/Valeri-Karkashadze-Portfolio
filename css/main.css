@@ -2181,11 +2181,6 @@ h1, h2, h3, h4, h5, h6 {
 small {
   font-size: 60%; }
 
-a {
-  color: #378C3F; }
-  a:hover, a:focus {
-    color: #378C3F; }
-
 h1, .h1 {
   font-size: 3.5em;
   line-height: 1.15;
@@ -2541,20 +2536,23 @@ body {
     width: 37px;
     height: 27px;
     outline: 0;
-    cursor: pointer; }
+    cursor: pointer; 
+   }
     .navbar .navbar-toggler.navbar-toggler-left {
       position: relative;
       left: 0;
       padding-left: 0; }
     .navbar .navbar-toggler:hover .navbar-toggler-bar.bar2 {
-      width: 22px; }
+      width: 22px;
+        }
   .navbar .button-dropdown .navbar-toggler-bar:nth-child(2) {
     width: 17px; }
   .navbar.navbar-transparent {
     background-color: transparent !important;
     box-shadow: none;
     color: #FFFFFF;
-    padding-top: 20px; }
+    padding-top: 20px;
+  }
   .navbar.bg-white:not(.navbar-transparent) a:not(.dropdown-item) {
     color: #888; }
     .navbar.bg-white:not(.navbar-transparent) a:not(.dropdown-item).disabled {
@@ -4165,7 +4163,6 @@ Created using IcoMoon - icomoon.io
     color: #FFFFFF; }
   .sidebar-collapse .navbar .navbar-translate {
     width: 100%;
-    position: relative;
     display: flex;
     justify-content: space-between !important;
     align-items: center;
@@ -4391,7 +4388,6 @@ Created using IcoMoon - icomoon.io
     color: #FFFFFF; }
   .bootstrap-collapse .navbar .navbar-translate {
     width: 100%;
-    position: relative;
     display: flex;
     justify-content: space-between !important;
     align-items: center;
@@ -5293,11 +5289,16 @@ a.credit {
   }
 
   .portfolios {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 2rem;
-    margin-top: 3rem;
-  }
+  display: grid;
+  grid-template-columns: repeat(3, 3fr);
+  grid-gap: 2rem;
+  margin-top: 3rem;
+}
+
+.sixth-grid-item {
+  grid-row: 3;
+  grid-column: 1 / span 3;
+}
   .portfolios .portfolio-item {
     position: relative;
     border-radius: 15px;
@@ -5363,3 +5364,105 @@ a.credit {
   }
   
 
+  .btn-cssbuttons {
+    --btn-color: rgb(2 131 221);
+    position: relative;
+    padding: 16px 32px;
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1;
+    color: white;
+    background: none;
+    border: none;
+    outline: none;
+    overflow: hidden;
+    cursor: pointer;
+    filter: drop-shadow(0 2px 8px rgba(39, 94, 254, 0.32));
+    transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+   }
+   
+   .btn-cssbuttons::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: var(--btn-color);
+    border-radius: 24px;
+    transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+   }
+   
+   .btn-cssbuttons span,
+   .btn-cssbuttons span span {
+    display: inline-flex;
+    vertical-align: middle;
+    transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+   }
+   
+   .btn-cssbuttons span {
+    transition-delay: 0.05s;
+   }
+   
+   .btn-cssbuttons span:first-child {
+    padding-right: 7px;
+   }
+   
+   .btn-cssbuttons span span {
+    margin-left: 8px;
+    transition-delay: 0.1s;
+   }
+   
+   .btn-cssbuttons ul {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    transform: translateY(-50%);
+   }
+   
+   .btn-cssbuttons ul li {
+    flex: 1;
+   }
+   
+   .btn-cssbuttons ul li a {
+    display: inline-flex;
+    vertical-align: middle;
+    transform: translateY(55px);
+    transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+   }
+   
+   .btn-cssbuttons ul li a:hover {
+    opacity: 0.5;
+   }
+   
+   .btn-cssbuttons:hover::before {
+    transform: scale(1.2);
+   }
+   
+   .btn-cssbuttons:hover span,
+   .btn-cssbuttons:hover span span {
+    transform: translateY(-55px);
+   }
+   
+   .btn-cssbuttons:hover ul li a {
+    transform: translateY(0);
+   }
+   
+   .btn-cssbuttons:hover ul li:nth-child(1) a {
+    transition-delay: 0.15s;
+   }
+   
+   .btn-cssbuttons:hover ul li:nth-child(2) a {
+    transition-delay: 0.2s;
+   }
+   
+   .btn-cssbuttons:hover ul li:nth-child(3) a {
+    transition-delay: 0.25s;
+   }
