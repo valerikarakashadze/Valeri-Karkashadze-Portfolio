@@ -746,8 +746,8 @@ form textarea {
   /* Cursor */
   .cursor {
     display: block;
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     position: absolute;
   top: 50%;
   left: 50%;
@@ -756,14 +756,14 @@ form textarea {
     background: transparent;
     pointer-events: none;
     z-index: 111;
-    border: 1px solid #000;
+    border: 2px solid;
     transition: all 0.2s ease-out;
     animation: moveCursor1 .5s infinite alternate;
 }
 
 .expand {
     background: transparent;
-    animation: moveCursor2 .5s forwards;
+    animation: moveCursor2 .1s forwards;
     border: 1px solid #000;
 }
 
@@ -814,13 +814,15 @@ td {
   margin: 0;
   padding: 0;
   font-size: 13px;
-  direction: ltr;
+  transition: 1s;
 }
+
 
 .sectionClass {
   padding: 80px 0px 50px 0px;
   position: relative;
   display: block;
+  
 }
 
 .row {
@@ -865,6 +867,7 @@ td {
   height: 100%;
   position: relative;
 }
+
 /********************************/
 /*  SECTION WORK EXPERIENCE
 ********************************/
@@ -1143,6 +1146,7 @@ td {
     font-size: 70%;
   }
 }
+
 /* AUTHOR LINK */
 
 
@@ -1228,5 +1232,114 @@ footer p strong {
              bottom: -170px;
   margin-bottom: 20px;
     }
+  }
 
+
+  .linkebi{
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+ }
+
+ /* carouselfc */
+
+ .carousel-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.carousel-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 300%;
+  height: 100%;
+  transition: transform 0.5s ease;
+}
+
+.carousel-slide {
+  width: calc(100% / 3);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3em;
+  font-weight: bold;
+}
+.carousel-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px; /* or whatever height you want for your navigation container */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.prev-btn,
+.next-btn {
+  background-color: transparent;
+  color: rgb(0, 0, 0);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 1.5em;
+  margin: 0 10px;
+}
+
+.prev-btn i,
+.next-btn i {
+  font-size: 1.5em;
+}
+
+.prev-btn,
+.next-btn {
+  background-color: transparent;
+  color: rgb(0, 0, 0);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 1.5em;
+  margin: 0 10px;
+}
+
+.prev-btn::before,
+.next-btn::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url('path/to/arrow-icon.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: rotateY(180deg);
+}
+
+.next-btn::before {
+  transform: none;
+}
+
+@media (max-width: 768px) {
+  .carousel-slide {
+    font-size: 2em;
+  }
+}
+.prev-btn {
+  margin-right: auto;
+}
+
+.next-btn {
+  margin-left: auto;
+}
+.carousel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
 
