@@ -1,4 +1,5 @@
-	// Sticky Navbar
+	//  -------------------  Sticky Navbar
+  
     let header = document.querySelector('header');
     let menu = document.querySelector('#menu-icon');
     let navbar = document.querySelector('.navbar');
@@ -15,7 +16,8 @@
         navbar.classList.remove('active');
     }
      
-    // Dark Mode
+    // ------------------  Dark Mode
+
     let darkmode = document.querySelector('#darkmode');
      
     darkmode.onclick = () => {
@@ -27,80 +29,6 @@
             document.body.classList.remove('active');
         }
     }
-
-    
-
-// Get the "Load More" button, the "Load Less" button, and the services content container
-const loadMoreBtn = document.getElementById("load-more");
-const loadLessBtn = document.getElementById("load-less");
-const servicesContent = document.querySelector(".services-content");
-
-// Get all the services boxes
-const servicesBoxes = servicesContent.querySelectorAll(".services-box");
-
-// Set the initial number of visible boxes to 3
-let visibleBoxes = 3;
-
-// Show/hide boxes based on the number of visible boxes
-function showHideBoxes() {
-  // Hide all boxes first
-  servicesBoxes.forEach((box) => {
-    box.classList.add("hidden");
-  });
-
-  // Show the specified number of boxes
-  for (let i = 0; i < visibleBoxes; i++) {
-    servicesBoxes[i].classList.remove("hidden");
-  }
-
-  // If all boxes are visible, hide the "Load More" button and show the "Load Less" button
-  if (visibleBoxes >= servicesBoxes.length) {
-    loadMoreBtn.classList.add("hidden");
-    loadLessBtn.classList.remove("hidden");
-  } else {
-    loadMoreBtn.classList.remove("hidden");
-    loadLessBtn.classList.add("hidden");
-  }
-
-  // If no boxes are visible, hide the "Load Less" button
-  if (visibleBoxes <= 3) {
-    loadLessBtn.classList.add("hidden");
-  } else if (visibleBoxes >=13){
-    loadLessBtn.classList.remove("hidden");
-  }
-}
-
-// Call the function initially to show the first 3 boxes
-showHideBoxes();
-
-// When the "Load More" button is clicked, increase the number of visible boxes
-loadMoreBtn.addEventListener("click", () => {
-  visibleBoxes += 3;
-  showHideBoxes();
-  
-  // Hide the "Load More" button and show the "Load Less" button if all boxes are visible
-  if (visibleBoxes >= servicesBoxes.length) {
-    loadMoreBtn.classList.add("hidden");
-    loadLessBtn.classList.remove("hidden");
-  }
-});
-
-// When the "Load Less" button is clicked, show only the initial 3 boxes
-loadLessBtn.addEventListener("click", ()=> {
-  visibleBoxes = 3;
-  showHideBoxes();
-  
-  // Hide the "Load Less" button and show the "Load More" button
-  loadLessBtn.classList.add("hidden");
-  loadMoreBtn.classList.remove("hidden");
-});
-
-// Hide all boxes except for the initial 3 on page load
-for (let i = 3; i < servicesBoxes.length; i++) {
-  servicesBoxes[i].classList.add("hidden");
-}
-
-
 
 // -------------------  Scroll back to top
 
@@ -125,7 +53,9 @@ let calcScrollValue = () => {
 
 window.onscroll = calcScrollValue;
 window.onload = calcScrollValue;
-// send to github
+
+
+// --------------- send to github
 
 const githubBtn = document.getElementById('github-btn');
 
@@ -133,7 +63,8 @@ const githubBtn = document.getElementById('github-btn');
     window.open('https://github.com/valerikarakashadze?tab=repositories', '_blank');
   });
 
-  // cursor
+  // ----------- cursor
+
   const cursor = document.querySelector('.cursor');
 
 document.addEventListener('mousemove', e => {
@@ -147,7 +78,7 @@ document.addEventListener('click', e => {
     }, 500);
 });
 
-// Page title changer
+// ---------------  window title changer
 
 let pageTitle = document.title;
 window.addEventListener("blur", () => {
@@ -156,3 +87,49 @@ window.addEventListener("blur", () => {
 window.addEventListener("focus", () => {
     document.title = pageTitle;
 })
+
+
+// ------------------------ carousel
+const carouselContainer = document.querySelector('.carousel-container');
+const carouselWrapper = document.querySelector('.carousel-wrapper');
+const slides = document.querySelectorAll('.carousel-slide');
+const prevBtn = document.querySelector('.prev-btn');
+const nextBtn = document.querySelector('.next-btn');
+
+let slideIndex = 1;
+
+function moveToSlide(index) {
+  carouselWrapper.style.transform = `translateX(-${index * 100 / slides.length}%)`;
+}
+
+function moveToNextSlide() {
+  slideIndex = (slideIndex + 1) % slides.length;
+  moveToSlide(slideIndex);
+}
+
+function moveToPrevSlide() {
+  slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+  moveToSlide(slideIndex);
+}
+
+prevBtn.addEventListener('click', moveToPrevSlide);
+nextBtn.addEventListener('click', moveToNextSlide);
+
+setInterval(moveToNextSlide, 5000);
+
+
+// ------- autoslide 
+
+function autoSlide() {
+  let i = 0;
+  const slides = document.querySelectorAll('.slide');
+  const interval = setInterval(() => {
+    slides[i].classList.remove('active');
+    i++;
+    if (i >= slides.length) {
+      i = 0;
+    }
+    slides[i].classList.add('active');
+  }, 5000);
+}
+
