@@ -60,7 +60,7 @@ window.onload = calcScrollValue;
 const githubBtn = document.getElementById('github-btn');
 
   githubBtn.addEventListener('click', function() {
-    window.open('https://github.com/valerikarakashadze?tab=repositories', '_blank');
+    window.open('https://github.com/valerikarakashadze', '_blank');
   });
 
   // ----------- cursor
