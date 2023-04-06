@@ -157,7 +157,7 @@ header.shadow {
 }
 .social a {
   margin-bottom: 1rem;
-  font-size: 22px;
+  font-size: 35px;
   color: var(--text-color);
 }
 .social a:hover {
