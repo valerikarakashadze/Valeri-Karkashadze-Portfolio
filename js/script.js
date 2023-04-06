@@ -48,7 +48,7 @@ let calcScrollValue = () => {
   scrollProgress.addEventListener("click", () => {
     document.documentElement.scrollTop = 0;
   });
-  scrollProgress.style.background = `conic-gradient(#03cc65 ${scrollValue}%, #d7d7d7 ${scrollValue}%)`;
+  scrollProgress.style.background = `conic-gradient(#0f0c27 ${scrollValue}%, #d7d7d7 ${scrollValue}%)`;
 };
 
 window.onscroll = calcScrollValue;
@@ -60,7 +60,7 @@ window.onload = calcScrollValue;
 const githubBtn = document.getElementById('github-btn');
 
   githubBtn.addEventListener('click', function() {
-    window.open('https://github.com/valerikarakashadze', '_blank');
+    window.open('https://github.com/valerikarakashadze?tab=repositories', '_blank');
   });
 
   // ----------- cursor
@@ -92,10 +92,9 @@ window.addEventListener("focus", () => {
 // ------------------------ carousel
 const carouselContainer = document.querySelector('.carousel-container');
 const carouselWrapper = document.querySelector('.carousel-wrapper');
-const slides = document.querySelectorAll('.carousel-slide');
+let slides = document.querySelectorAll('.carousel-slide');
 const prevBtn = document.querySelector('.prev-btn');
 const nextBtn = document.querySelector('.next-btn');
-
 let slideIndex = 1;
 
 function moveToSlide(index) {
@@ -115,21 +114,15 @@ function moveToPrevSlide() {
 prevBtn.addEventListener('click', moveToPrevSlide);
 nextBtn.addEventListener('click', moveToNextSlide);
 
-setInterval(moveToNextSlide, 5000);
-
-
-// ------- autoslide 
-
-function autoSlide() {
-  let i = 0;
-  const slides = document.querySelectorAll('.slide');
-  const interval = setInterval(() => {
-    slides[i].classList.remove('active');
-    i++;
-    if (i >= slides.length) {
-      i = 0;
-    }
-    slides[i].classList.add('active');
-  }, 5000);
+// Update the slides variable whenever the screen size changes
+function updateSlides() {
+  slides = document.querySelectorAll('.carousel-slide');
 }
 
+// Call updateSlides() whenever the window is resized
+window.addEventListener('resize', updateSlides);
+
+// Call updateSlides() once to set the initial value of slides
+updateSlides();
+
+setInterval(moveToNextSlide, 5000);
