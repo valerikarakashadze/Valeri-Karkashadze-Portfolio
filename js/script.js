@@ -89,40 +89,166 @@ window.addEventListener("focus", () => {
 })
 
 
-// ------------------------ carousel
-const carouselContainer = document.querySelector('.carousel-container');
+// -------------- Hammer.js
+
+let isDragging = false;
+let startPosition;
+let currentTranslate = 0;
+let prevTranslate = 0;
+let animationID;
+
 const carouselWrapper = document.querySelector('.carousel-wrapper');
-let slides = document.querySelectorAll('.carousel-slide');
-const prevBtn = document.querySelector('.prev-btn');
-const nextBtn = document.querySelector('.next-btn');
-let slideIndex = 1;
+const carouselSlides = document.querySelectorAll('.carousel-slide');
+const carouselWidth = carouselWrapper.offsetWidth;
+const slideWidth = carouselSlides[0].offsetWidth;
+const numSlides = carouselSlides.length;
+const maxTranslate = (numSlides - 1) * slideWidth;
 
-function moveToSlide(index) {
-  carouselWrapper.style.transform = `translateX(-${index * 100 / slides.length}%)`;
+const onTouchStart = (event) => {
+  if (event.touches.length === 1) {
+    startPosition = event.touches[0].clientX;
+    isDragging = true;
+    cancelAnimationFrame(animationID);
+  }
+};
+
+const onTouchMove = (event) => {
+  if (isDragging) {
+    const currentPosition = event.touches[0].clientX;
+    currentTranslate = prevTranslate + currentPosition - startPosition;
+  }
+};
+
+const onTouchEnd = () => {
+  if (isDragging) {
+    isDragging = false;
+    prevTranslate = currentTranslate;
+    requestAnimationFrame(slide);
+  }
+};
+
+const slide = () => {
+  carouselWrapper.style.transform = `translateX(${currentTranslate}px)`;
+  animationID = requestAnimationFrame(slide);
+};
+
+// Add the touch event listeners to the carousel
+if ('ontouchstart' in window) {
+  carouselWrapper.addEventListener('touchstart', onTouchStart);
+  carouselWrapper.addEventListener('touchmove', onTouchMove);
+  carouselWrapper.addEventListener('touchend', onTouchEnd);
+} else {
+  carouselWrapper.addEventListener('mousedown', (event) => {
+    event.preventDefault();
+    startPosition = event.clientX;
+    isDragging = true;
+    cancelAnimationFrame(animationID);
+  });
+
+  carouselWrapper.addEventListener('mousemove', (event) => {
+    event.preventDefault();
+    if (isDragging) {
+      const currentPosition = event.clientX;
+      currentTranslate = prevTranslate + currentPosition - startPosition;
+    }
+  });
+
+  carouselWrapper.addEventListener('mouseup', () => {
+    if (isDragging) {
+      isDragging = false;
+      prevTranslate = currentTranslate;
+      requestAnimationFrame(slide);
+    }
+  });
 }
 
-function moveToNextSlide() {
-  slideIndex = (slideIndex + 1) % slides.length;
-  moveToSlide(slideIndex);
+function moveCarousel(direction) {
+  let currentSlide = Math.round(-currentTranslate / slideWidth);
+  
+  if (direction === 'next') {
+    currentSlide++;
+    if (currentSlide > numSlides - 1) {
+      currentSlide = 0; // reset to first slide
+    }
+  } else {
+    currentSlide--;
+    if (currentSlide < 0) {
+      currentSlide = numSlides - 1; // reset to last slide
+    }
+  }
+
+  currentTranslate = -currentSlide * slideWidth;
+
+  carouselWrapper.style.transform = `translateX(${currentTranslate}px)`;
 }
 
-function moveToPrevSlide() {
-  slideIndex = (slideIndex - 1 + slides.length) % slides.length;
-  moveToSlide(slideIndex);
+let currentSlide = 0;
+const totalSlides = 15; // total number of slides
+const slideWidths = document.querySelector('.carousel-slide').offsetWidth;
+
+function moveCarousel(direction) {
+  if (direction === 'next') {
+    currentSlide++;
+    if (currentSlide > totalSlides - 1) {
+      currentSlide = 0; // reset to first slide
+    }
+  } else {
+    currentSlide--;
+    if (currentSlide < 0) {
+      currentSlide = totalSlides - 1; // reset to last slide
+    }
+  }
+
+  const carouselWrapper = document.querySelector('.carousel-wrapper');
+  const maxTranslate = (totalSlides - 1) * slideWidths;
+  let currentTranslate = -currentSlide * slideWidths;
+
+  if (currentTranslate > 0) {
+    currentTranslate = -(maxTranslate % carouselWidth);
+  } else if (currentTranslate < -(maxTranslate % carouselWidth)) {
+    currentTranslate = 0;
+  }
+
+  carouselWrapper.style.transform = `translateX(${currentTranslate}px)`;
 }
 
-prevBtn.addEventListener('click', moveToPrevSlide);
-nextBtn.addEventListener('click', moveToNextSlide);
 
-// Update the slides variable whenever the screen size changes
-function updateSlides() {
-  slides = document.querySelectorAll('.carousel-slide');
+
+
+// --------------- auto slider
+
+let intervalID;
+
+function startAutoSlider() {
+  intervalID = setInterval(function() {
+    moveCarousel('next');
+  }, 5000); // change the interval time as desired
 }
 
-// Call updateSlides() whenever the window is resized
-window.addEventListener('resize', updateSlides);
+function stopAutoSlider() {
+  clearInterval(intervalID);
+}
 
-// Call updateSlides() once to set the initial value of slides
-updateSlides();
+// start auto slider when the page loads
+window.addEventListener('load', function() {
+  startAutoSlider();
+});
 
-setInterval(moveToNextSlide, 5000);
+// stop auto slider when the user interacts with the carousel
+carouselWrapper.addEventListener('mousedown', stopAutoSlider);
+carouselWrapper.addEventListener('touchstart', stopAutoSlider);
+
+// restart auto slider when the user stops interacting with the carousel
+carouselWrapper.addEventListener('mouseup', startAutoSlider);
+carouselWrapper.addEventListener('touchend', startAutoSlider);
+
+// ------------- RESET
+
+const resetBtn = document.querySelector('#reset-btn');
+
+resetBtn.addEventListener('click', () => {
+  // Reset the carousel to the first slide
+  currentTranslate = 0;
+  prevTranslate = 0;
+  slide();
+});
