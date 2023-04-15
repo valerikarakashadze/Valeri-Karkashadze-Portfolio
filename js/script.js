@@ -174,36 +174,6 @@ slides.addEventListener("touchmove", (event) => {
   }
 });
 
-function autoSlide() {
-  setInterval(() => {
-    if (counter >= slide.length - 1) return;
-    slides.style.transition = "transform 0.3s ease-in-out";
-    counter++;
-    slides.style.transform = "translateX(" + -size * counter + "px)";
-  }, 3000); // Change slide every 3 seconds
-}
-
-autoSlide();
-
-
-// ---------- animation
-
-// Initialize ScrollReveal
-ScrollReveal({ reset: true });
-
-// Define the elements to animate
-const srElements = document.querySelectorAll('.sr');
-
-// Loop through each element and animate it
-srElements.forEach((el) => {
-  ScrollReveal().reveal(el, {
-    delay: 200,
-    distance: '20px',
-    origin: 'left',
-    opacity: 0,
-    duration: 1000,
-  });
-});
 
 // ----- scroll animation
 
