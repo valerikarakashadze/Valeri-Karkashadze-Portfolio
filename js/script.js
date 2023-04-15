@@ -65,17 +65,27 @@ const githubBtn = document.getElementById('github-btn');
 
   // ----------- cursor
 
-  const cursor = document.querySelector('.cursor');
+  const cursor = document.querySelector(".cursor");
 
-document.addEventListener('mousemove', e => {
-    cursor.setAttribute("style", "top: " + (e.pageY - 10) + "px; left: " + (e.pageX - 10) + "px;")
+window.addEventListener("mousemove", (e) => {
+  cursor.style.left = e.pageX + "px";
+  cursor.style.top = e.pageY + "px";
+  cursor.setAttribute("data-fromTop", cursor.offsetTop - scrollY);
+  // console.log(e)
 });
-
-document.addEventListener('click', e => {
-    cursor.classList.add("expand");
-    setTimeout(() => {
-        cursor.classList.remove("expand");
-    }, 500);
+window.addEventListener("scroll", () => {
+  const fromTop = cursor.getAttribute("data-fromTop");
+  cursor.style.top = scrollY + parseInt(fromTop) + "px";
+  console.log(scrollY);
+});
+window.addEventListener("click", () => {
+  if (cursor.classList.contains("click")) {
+    cursor.classList.remove("click");
+    void cursor.offsetWidth; // trigger a DOM reflow
+    cursor.classList.add("click");
+  } else {
+    cursor.classList.add("click");
+  }
 });
 
 // ---------------  window title changer
@@ -89,7 +99,8 @@ window.addEventListener("focus", () => {
 })
 
 
-// -------------- Hammer.js
+// ------- Slider
+
 const slider = document.querySelector(".slider");
 const slides = document.querySelector(".slides");
 const slide = document.querySelectorAll(".slide");
@@ -127,61 +138,56 @@ slides.addEventListener("transitionend", () => {
   }
 });
 
-
-
-// --------------- auto slider
-
-let intervalID;
-
-function startAutoSlider() {
-  intervalID = setInterval(function() {
-    moveCarousel('next');
-  }, 5000); // change the interval time as desired
+function autoSlide() {
+  setInterval(() => {
+    if (counter >= slide.length - 1) return;
+    slides.style.transition = "transform 0.3s ease-in-out";
+    counter++;
+    slides.style.transform = "translateX(" + -size * counter + "px)";
+  }, 3000); // Change slide every 3 seconds
 }
 
-function stopAutoSlider() {
-  clearInterval(intervalID);
+autoSlide();
+
+
+// ---------- animation
+
+// Initialize ScrollReveal
+ScrollReveal({ reset: true });
+
+// Define the elements to animate
+const srElements = document.querySelectorAll('.sr');
+
+// Loop through each element and animate it
+srElements.forEach((el) => {
+  ScrollReveal().reveal(el, {
+    delay: 200,
+    distance: '20px',
+    origin: 'left',
+    opacity: 0,
+    duration: 1000,
+  });
+});
+
+// ----- scroll animation
+
+function reveal() {
+  var reveals = document.querySelectorAll(".reveal");
+
+  for (var i = 0; i < reveals.length; i++) {
+    var windowHeight = window.innerHeight;
+    var elementTop = reveals[i].getBoundingClientRect().top;
+    var elementVisible = 150;
+
+    if (elementTop < windowHeight - elementVisible) {
+      reveals[i].classList.add("active");
+    } else {
+      reveals[i].classList.remove("active");
+    }
+  }
 }
 
-// start auto slider when the page loads
-window.addEventListener('load', function() {
-  startAutoSlider();
-});
-
-// stop auto slider when the user interacts with the carousel
-carouselWrapper.addEventListener('mousedown', stopAutoSlider);
-carouselWrapper.addEventListener('touchstart', stopAutoSlider);
-
-// restart auto slider when the user stops interacting with the carousel
-carouselWrapper.addEventListener('mouseup', startAutoSlider);
-carouselWrapper.addEventListener('touchend', startAutoSlider);
-
-// ------------- RESET
-
-const resetBtn = document.querySelector('#reset-btn');
-
-resetBtn.addEventListener('click', () => {
-  // Reset the carousel to the first slide
-  currentTranslate = 0;
-  prevTranslate = 0;
-  slide();
-});
-
-
-// ---------- Scroll
-// create a new script element
-var srScript = document.createElement('script');
-// set the source of the script to the ScrollReveal library
-srScript.src = 'https://unpkg.com/scrollreveal';
-// append the script to the document body
-document.body.appendChild(srScript);
-ScrollReveal().reveal('.cbp_tmlabel', {
-  reset: true,
-  duration: 1000,
-  origin: 'left',
-  distance: '50px',
-  viewFactor: 0.5
-});
+window.addEventListener("scroll", reveal);
 
 
 // --------- button 
