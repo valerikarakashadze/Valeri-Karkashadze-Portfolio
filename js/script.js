@@ -100,6 +100,7 @@ window.addEventListener("focus", () => {
 
 
 // ------- Slider
+
 const slider = document.querySelector(".slider");
 const slides = document.querySelector(".slides");
 const slide = document.querySelectorAll(".slide");
@@ -225,7 +226,7 @@ function reveal() {
 window.addEventListener("scroll", reveal);
 
 
-// --------- button 
+// --------- navigation button 
 
 $('.round').click(function(e) {
   e.preventDefault();
