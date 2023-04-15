@@ -100,7 +100,6 @@ window.addEventListener("focus", () => {
 
 
 // ------- Slider
-
 const slider = document.querySelector(".slider");
 const slides = document.querySelector(".slides");
 const slide = document.querySelectorAll(".slide");
@@ -108,6 +107,8 @@ const prevBtn = document.querySelector(".prev");
 const nextBtn = document.querySelector(".next");
 let counter = 0;
 const size = slide[0].clientWidth;
+let isMouseDown = false;
+let mouseDownX = 0;
 
 slides.style.transform = "translateX(" + -size * counter + "px)";
 
@@ -135,6 +136,40 @@ slides.addEventListener("transitionend", () => {
     slides.style.transition = "none";
     counter = slide.length - counter;
     slides.style.transform = "translateX(" + -size * counter + "px)";
+  }
+});
+
+slides.addEventListener("mousedown", (event) => {
+  isMouseDown = true;
+  mouseDownX = event.clientX;
+  slides.style.transition = "none";
+});
+
+slides.addEventListener("mouseup", () => {
+  isMouseDown = false;
+});
+
+slides.addEventListener("mousemove", (event) => {
+  if (isMouseDown) {
+    const deltaX = event.clientX - mouseDownX;
+    slides.style.transform = `translateX(${-(counter * size) + deltaX}px)`;
+  }
+});
+
+slides.addEventListener("touchstart", (event) => {
+  isMouseDown = true;
+  mouseDownX = event.touches[0].clientX;
+  slides.style.transition = "none";
+});
+
+slides.addEventListener("touchend", () => {
+  isMouseDown = false;
+});
+
+slides.addEventListener("touchmove", (event) => {
+  if (isMouseDown) {
+    const deltaX = event.touches[0].clientX - mouseDownX;
+    slides.style.transform = `translateX(${-(counter * size) + deltaX}px)`;
   }
 });
 
