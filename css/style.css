@@ -242,11 +242,11 @@ span {
   height: 0.5rem;
   background: var(--main-color);
   border-radius: 0.5rem;
-  animation: fill 10s forwards;
+  animation: fill 15s forwards;
 }
 /* Box 1 - HTML */
 .bars-box .html-bar {
-  animation: fill-html 10s forwards;
+  animation: fill-html 15s forwards;
 }
 
 @keyframes fill-html {
@@ -260,7 +260,7 @@ span {
 
 /* Box 2 - CSS */
 .bars-box .css-bar {
-  animation: fill-css 10s forwards;
+  animation: fill-css 15s forwards;
 }
 
 @keyframes fill-css {
@@ -274,7 +274,7 @@ span {
 
 /* Box 3 - JavaScript */
 .bars-box .js-bar {
-  animation: fill-js 10s forwards;
+  animation: fill-js 15s forwards;
 }
 
 @keyframes fill-js {
@@ -287,7 +287,7 @@ span {
 }
 /* Box 4 - Angular */
 .bars-box .angular-bar {
-  animation: fill-angular 10s forwards;
+  animation: fill-angular 15s forwards;
 }
 
 @keyframes fill-angular {
@@ -301,7 +301,7 @@ span {
 
 /* Box 5 - TypeScript */
 .bars-box .typescript-bar {
-  animation: fill-typescript 10s forwards;
+  animation: fill-typescript 15s forwards;
 }
 
 @keyframes fill-typescript {
@@ -315,7 +315,7 @@ span {
 
 /* Box 6 - SCSS */
 .bars-box .scss-bar {
-  animation: fill-scss 10s forwards;
+  animation: fill-scss 15s forwards;
 }
 
 @keyframes fill-scss {
@@ -328,7 +328,7 @@ span {
 }
 /* Box 7 - Bootstrap */
 .bars-box .bootstrap-bar {
-  animation: fill-bootstrap 10s forwards;
+  animation: fill-bootstrap 15s forwards;
 }
 
 @keyframes fill-bootstrap {
@@ -342,7 +342,7 @@ span {
 
 /* Box 8 - Canva */
 .bars-box .canva-bar {
-  animation: fill-canva 10s forwards;
+  animation: fill-canva 15s forwards;
 }
 
 @keyframes fill-canva {
@@ -356,7 +356,7 @@ span {
 
 /* Box 9 - Git */
 .bars-box .git-bar {
-  animation: fill-git 10s forwards;
+  animation: fill-git 15s forwards;
 }
 
 @keyframes fill-git {
@@ -370,7 +370,7 @@ span {
 
 /* Box 10 - SASS */
 .bars-box .sass-bar {
-  animation: fill-sass 10s forwards;
+  animation: fill-sass 15s forwards;
 }
 
 @keyframes fill-sass {
@@ -384,7 +384,7 @@ span {
 
 /* Box 11 - PHP */
 .bars-box .php-bar {
-  animation: fill-php 10s forwards;
+  animation: fill-php 15s forwards;
 }
 
 @keyframes fill-php {
@@ -398,7 +398,7 @@ span {
 
 /* Box 12 - MySQL */
 .bars-box .mysql-bar {
-  animation: fill-mysql 10s forwards;
+  animation: fill-mysql 15s forwards;
 }
 
 @keyframes fill-mysql {
@@ -412,7 +412,7 @@ span {
 
 /* Box 13 - Figma */
 .bars-box .figma-bar {
-  animation: fill-figma 10s forwards;
+  animation: fill-figma 15s forwards;
 }
 
 @keyframes fill-figma {
