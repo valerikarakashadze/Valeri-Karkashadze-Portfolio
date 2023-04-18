@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,8 +43,7 @@
     <!-- JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://unpkg.com/scrollreveal@4.0.7/dist/scrollreveal.min.js"></script>
-
-
+    <script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
 
 
 
@@ -56,7 +56,18 @@
 
   gtag('config', 'G-VBEPBSDMMX');
 </script>
+
+
+<!-- Email contact -->
+<script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+<script>
+   (function(){
+      emailjs.init("fXtt68cXXLdiY4TuU");
+   })();
+</script>
+
 </head>
+
 
 <body>
     <!-- cursor -->
@@ -135,8 +146,8 @@
         </div>
     </section>
    
-    <!-- About -->
 
+    <!-- About -->
     <section class="about" id="about">
         <div class="heading">
             <h2 data-splitting>About Me</h2>
@@ -151,31 +162,37 @@
                 <p>Hello! I am Valeri Karkashadze, Front-End Web Developer
                     I am a student of Ivane Javakhishvili Tbilisi State University at the Faculty of Economics and Business, but my great desire was to study and work as a Front-End Web Developer. My passion and commitment to my work has always enabled me to take pleasure in what I do and strive for achieving my goals. I am a determined and adaptable person, who constantly aspires for novelty. I also have a very well developed problem solving, communicational and analytical thinking skills.</p>
                 <div class="information">
-                    <!-- Box 1 -->
+                    <!-- info 1 -->
+
                     <div class="info-box">
                         <i class='bx bxs-user'></i>
                         <span>Valeri Karkashadze</span>
                     </div>
-                    <!-- Box 2 -->
+
+                    <!-- info 2 -->
                     <div class="info-box">
                         <i class="fa-solid fa-cake-candles"></i>
                         <span id="age">June 5, 2002</span>
                     </div>
-                    <!-- Box 3 -->
+
+                    <!-- info 3 -->
                     <div class="info-box">
                         <i class="fa-solid fa-phone"></i> 
                         <span>+995 577 39 79 79</span>
                     </div>
-                    <!-- Box 4 -->
+
+                    <!-- info 4 -->
                     <div class="info-box">
                         <i class="fa-solid fa-envelope"></i>                        <span>valeriqarqashadze2002@gmail.com</span>
                     </div>
-                    <!-- Box 5 -->
+
+                    <!-- info 5 -->
                     <div class="info-box">
                         <i class="fa-solid fa-location-dot"></i>
                         <span> 3 Mirian Mepe, Tbilisi, Georgia</span>
                     </div>
-                    <!-- Box 6 -->
+
+                    <!-- info 6 -->
                     <div class="info-box">
                         <i class="fa-solid fa-language"></i>
                         <span> Georgian, English, German, Russian</span>
@@ -198,6 +215,7 @@
 
         <div class="skills-container reveal">
           <div class="bars">
+
               <!-- Box 1 -->
               <div class="bars-box">
                   <h3>HTML</h3>
@@ -205,6 +223,7 @@
                   <div class="light-bar"></div>
                   <div class="percent-bar html-bar" style=" width: 95%;"></div>
               </div>
+
               <!-- Box 2 -->
               <div class="bars-box">
                   <h3>CSS</h3>
@@ -212,6 +231,7 @@
                   <div class="light-bar"></div>
                   <div class="percent-bar css-bar" style="width: 95%;"></div>
               </div>
+
               <!-- Box 3 -->
               <div class="bars-box">
                   <h3>JavaScript</h3>
@@ -219,6 +239,7 @@
                   <div class="light-bar"></div>
                   <div class="percent-bar js-bar" style="width: 90%;"></div>
               </div>
+
               <!-- Box 4 -->
               <div class="bars-box">
                   <h3>Angular</h3>
@@ -226,6 +247,7 @@
                   <div class="light-bar"></div>
                   <div class="percent-bar angular-bar" style="width: 80%;"></div>
               </div>
+
                <!-- Box 5 -->
               <div class="bars-box">
                   <h3>TypeScript</h3>
@@ -233,6 +255,7 @@
                   <div class="light-bar"></div>
                   <div class="percent-bar typescript-bar" style="width: 80%;"></div>
               </div>
+
                <!-- Box 6 -->
               <div class="bars-box">
                   <h3>SCSS</h3>
@@ -240,6 +263,7 @@
                   <div class="light-bar"></div>
                   <div class="percent-bar scss-bar" style="width: 70%;"></div>
               </div>
+
               <!-- Box 7 -->
                <div class="bars-box">
                   <h3>Bootstrap</h3>
@@ -247,6 +271,7 @@
                   <div class="light-bar"></div>
                   <div class="percent-bar bootstrap-bar" style="width: 70%;"></div>
                </div>
+
               <!-- Box 8 -->
               <div class="bars-box">
                 <h3>Canva</h3>
@@ -254,6 +279,7 @@
                 <div class="light-bar"></div>
                 <div class="percent-bar canva-bar" style="width: 80%;"></div>
             </div>
+
               <!-- Box 9 -->
               <div class="bars-box">
                   <h3>Git</h3>
@@ -261,6 +287,7 @@
                   <div class="light-bar"></div>
                   <div class="percent-bar git-bar" style="width: 80%;"></div>
               </div>
+
                <!-- Box 10 -->
               <div class="bars-box">
                   <h3>SASS</h3>
@@ -268,6 +295,7 @@
                   <div class="light-bar"></div>
                   <div class="percent-bar sass-bar" style="width: 70%;"></div>
               </div>
+
                <!-- Box 11 -->
                <div class="bars-box">
                   <h3>PHP</h3>
@@ -275,6 +303,7 @@
                   <div class="light-bar"></div>
                   <div class="percent-bar php-bar" style="width: 60%;"></div>
               </div>
+
                <!-- Box 12 -->
                <div class="bars-box">
                   <h3>MySQL</h3>
@@ -282,6 +311,7 @@
                   <div class="light-bar"></div>
                   <div class="percent-bar mysql-bar" style="width: 60%;"></div>
               </div>
+              
               <!-- Box 13 -->
               <div class="bars-box">
                 <h3>Figma</h3>
@@ -308,6 +338,8 @@
           </div>
           <div class="fullWidth eight columns">
             <ul class="cbp_tmtimeline">
+
+              <!-- Job 1 -->
               <li class="reveal">
                 <div class="cbp_tmicon cbp_tmicon-phone" style="background-color: #033a80;">
                   <i class="faPra fa-briefcase"></i>
@@ -320,7 +352,8 @@
                   <p class="projectParagraph">•	Developing responsive website using HTM, CSS, and JavaScript.<br>•	Collaborating with clients to understand their project requirements and ensure the final product meets their needs.<br>• Assembling the markup according to the design provided by the web designer.</p>
                 </div>
               </li>
-
+                  
+              <!-- Job 2 -->
               <li class="reveal">
                 <div class="cbp_tmicon cbp_tmicon-phone" style="background-color: #033a80;">
                   <i class="faPra fa-briefcase"></i>
@@ -333,7 +366,8 @@
                   <p class="projectParagraph">• Writing clean, maintainable, and efficient code using HTML, CSS, and JavaScript.<br>• Meeting with clients or project managers to discuss website requirements and design ideas.<br>• Managing my time and workload effectively to ensure that I meet deadlines and deliver high-quality work to my clients.</p>
                 </div>
               </li>
-                          
+                       
+              <!-- Job 3 -->
               <li class="reveal">
                 <div class="cbp_tmicon cbp_tmicon-phone" style="background-color: #033a80;" >
                   <i class="faPra fa-briefcase"></i>
@@ -381,6 +415,7 @@
         </div>
         <div class="slider">
           <div class="slides">
+
             <!-- slider 1 -->
             <div class="slide">
               <div class="services-box" style="align-items: center;">
@@ -391,6 +426,7 @@
               <a href="https://tsu.ge/en/faculty/FACULTY%20OF%20ECONOMICS%20AND%20BUSINESS/7" target="_blank" style="margin-top: 155px;">Learn More</a>
             </div>
           </div>
+
           <!-- slider 2 -->
           <div class="slide">
             <div class="services-box">
@@ -401,6 +437,7 @@
                 <a href="./Documents/Valeri Karkashadze Front-End Developer JavaScript.pdf" target="_blank" style="margin-top: 80px;">See Certificate</a>
             </div>
         </div>
+
         <!-- slider 3 -->
         <div class="slide">
           <div class="services-box">
@@ -411,6 +448,7 @@
             <a href="https://www.linkedin.com/learning/certificates/1cbd5822832ea0cbfff7274f440df73fb72ae50009f9adf42dc6e3ad00701085?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BcNhUctd5T%2FyYK1zG4VKsmA%3D%3D" target="_blank" style="margin-top: 20px;">See Certificate</a>
           </div>
       </div>
+
       <!-- slider 4 -->
       <div class="slide">
         <div class="services-box">
@@ -421,6 +459,7 @@
           <a href="https://www.testdome.com/certificates/c4fca9c85ce849e6848a910bf4d4fa29" target="_blank" style="margin-top: 120px;">See Certificate</a>
         </div>
       </div>
+
       <!-- slider 5 -->
       <div class="slide">
         <div class="services-box">
@@ -431,6 +470,7 @@
           <a href="https://www.testdome.com/certificates/077875d7a4d94f848d4493557581d516" target="_blank" style="margin-top: 120px;">See Certificate</a>
         </div>
       </div>
+
       <!-- slider 6 -->
       <div class="slide">
         <div class="services-box">
@@ -441,6 +481,7 @@
           <a href="https://www.testdome.com/certificates/78be609758974a678d0f17620f33dfb3" target="_blank" style="margin-top: 120px;">See Certificate</a>
         </div>
       </div>
+
       <!-- slider 7 -->
       <div class="slide">
         <div class="services-box">
@@ -451,6 +492,7 @@
           <a href="./Documents/Learn Complete Front-End Web Development Course (2023).pdf" target="_blank" style="margin-top: 60px;">See Certificate</a>
         </div>
       </div>
+
       <!-- slider 8 -->
       <div class="slide">
         <div class="services-box">
@@ -461,6 +503,7 @@
           <a href="https://www.linkedin.com/learning/certificates/76e1814704753eb9481549c152ecabf129588714469689339b4ab300d5fa1c04?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BCUp7E%2Fz%2FQuaBdVwsHbHR0w%3D%3D" target="_blank" style="margin-top: 100px;">See Certificate</a>
         </div>
       </div>
+
       <!-- slider 9 -->
       <div class="slide">
         <div class="services-box">
@@ -471,6 +514,7 @@
           <a href="https://www.linkedin.com/learning/certificates/8f0f0ab9e5a83b43d1b1203394ff6387f6131705a48011e765919be45a5b5c21?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3BCUp7E%2Fz%2FQuaBdVwsHbHR0w%3D%3D" target="_blank" style="margin-top: 100px;">See Certificate</a>
         </div>
       </div>
+
       <!-- slider 10 -->
       <div class="slide">
         <div class="services-box">
@@ -481,6 +525,7 @@
           <a href="https://www.freecodecamp.org/certification/ValeriKarkashadze/javascript-algorithms-and-data-structures" target="_blank" style="margin-top: 100px;">See Certificate</a>
         </div>
       </div>
+
       <!-- slider 11 -->
       <div class="slide">
         <div class="services-box">
@@ -491,6 +536,7 @@
           <a href="https://www.freecodecamp.org/certification/ValeriKarkashadze/responsive-web-design" target="_blank" style="margin-top: 130px;">See Certificate</a>
         </div>
       </div>
+
       <!-- slider 12 -->
       <div class="slide">
         <div class="services-box">
@@ -501,6 +547,7 @@
           <a href="./Documents/Udemy-Angular 2+ with Typescript - Essential Training.pdf" target="_blank" style="margin-top: 80px;">See Certificate</a>
         </div>
       </div>
+
       <!-- slider 13 -->
       <div class="slide">
         <div class="services-box">
@@ -511,6 +558,7 @@
           <a href="./Documents/Udemy - The Complete Web Developer Course 3.0.pdf" target="_blank" style="margin-top: 110px;">See Certificate</a>
         </div>
       </div>
+
       <!-- slider 14 -->
       <div class="slide">
         <div class="services-box">
@@ -531,6 +579,8 @@
         </div>    
     </section>
 
+
+
     <!-- Portfolio -->
 
     <section class="portfolio reveal" id="portfolio">
@@ -539,6 +589,7 @@
             <span> Here is my 3 last projects. For More project you can see in my <a href="https://github.com/valerikarakashadze?tab=repositories" style="text-decoration: none; color: rgb(0, 97, 40)">GitHub </a>page, which is a my professional portfolio that showcases my skills, experience, and projects related to my Front-End developer career. So you can check out my <a href="https://github.com/valerikarakashadze?tab=repositories" style="text-decoration: none; color: rgb(0, 97, 40)">GitHub</a></span>
         </div>
          <div class="portfolios" style="text-align: center;">
+
                 <!-- project 1 -->
             <div class="portfolio-item">
                 <div class="image">
@@ -556,6 +607,7 @@
                   </div>
               </div>
             </div>
+
                 <!-- project 2 -->
             <div class="portfolio-item">
                 <div class="image">
@@ -573,6 +625,7 @@
                   </div>
               </div>
             </div>
+
                 <!-- project 3 -->
                 <div class="portfolio-item">
                     <div class="image">
@@ -603,22 +656,26 @@
           </button>
     </section>
 
+
+
     <!-- Contact -->
 
     <section class="contact reveal" id="contact">
-        <div class="heading">
-            <h2>Contact</h2>
-            <span>"The best way to find yourself is to lose yourself in the service of others." - Mahatma Gandhi</span>
-        </div>
-        <div class="contact-form">
-            <form action="https://formspree.io/f/mjvznrkn" method="POST">
-                <input type="text" placeholder="Your Name" name="Name" required>
-                <input type="email" name="" id="" placeholder="Your Email" name="Email"required>
-                <textarea name="" id="" cols="30" rows="10" placeholder="Write Message Here..." name="text"required></textarea>
-                <input type="submit" value="Send" class="contact-button">
-            </form>
-        </div>
+      <div class="heading">
+          <h2>Contact</h2>
+          <span>"The best way to find yourself is to lose yourself in the service of others." - Mahatma Gandhi</span>
+      </div>
+      <div class="contact-form">
+        <form id="contact-form">
+          <input type="text" placeholder="Your Name" name="Name" required>
+          <input type="email" placeholder="Your Email" name="Email" required>
+          <textarea placeholder="Write Message Here..." name="Message" required></textarea>
+          <input type="submit" value="Send" class="contact-button">
+        </form>     
+        <div class="alert"></div>   
+      </div>
     </section>
+
 
     <!-- Footer -->
 
