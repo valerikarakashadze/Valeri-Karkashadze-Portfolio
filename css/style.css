@@ -1483,3 +1483,19 @@ button {
   transform: translateY(0);
   opacity: 1;
 }
+
+.alert {
+  background-color: green;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.5s ease-in-out;
+}
+
+.show {
+  opacity: 1;
+  transform: translateX(0);
+}
