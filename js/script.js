@@ -174,7 +174,6 @@ slides.addEventListener("touchmove", (event) => {
   }
 });
 
-
 // ----- scroll animation
 
 function reveal() {
@@ -203,3 +202,54 @@ $('.round').click(function(e) {
   e.stopPropagation();
   $('.arrow').toggleClass('bounceAlpha');
 });
+
+// ------------- animation fill
+const bars = document.querySelectorAll('.bars-box');
+
+const options = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.5
+};
+
+const observer = new IntersectionObserver(function(entries, observer) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      entry.target.querySelector('.html-bar').classList.add('fill-html');
+      observer.unobserve(entry.target);
+    }
+  });
+}, options);
+
+bars.forEach(function(bar) {
+  observer.observe(bar);
+});
+
+// emailjs contact 
+
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+  emailjs.send("service_23qbwa1", "template_5vd4ypv", {
+      "from_name": document.getElementById("contact-form").elements.namedItem("Name").value,
+      "from_email": document.getElementById("contact-form").elements.namedItem("Email").value,
+      "message_html": document.getElementById("contact-form").elements.namedItem("Message").value
+  })
+  .then(function(response) {
+      if (response.status === 200) {
+        var alertElement = document.querySelector('.alert');
+        alertElement.innerHTML = "Thank you for contacting me! I have received your message and I will get back to you as soon as possible!";
+        alertElement.classList.add('show');
+        setTimeout(function() {
+          alertElement.classList.remove('show');
+        }, 5000); // 10000 ms = 10 seconds
+      } else {
+        alert("Oops! Something went wrong and I couldn't send your message. Please try again later.");
+      }
+      console.log("SUCCESS. Status: %d, Text: %s", response.status, response.text);
+  }, function(err) {
+      console.log("FAILED. Error: ", err);
+  });
+});
+
+
+
