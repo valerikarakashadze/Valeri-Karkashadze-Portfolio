@@ -559,28 +559,31 @@ form textarea {
   padding: 20px;
   background: #0f0c27;
   color: #ffffff;
-  height: 400px;
+  height: 260px;
+  width: 100%;
 }
 .footer h2 {
   font-size: 50px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   font-family: 'Rouge Script', cursive;
+  position: absolute; 
+  display: flex;
+  bottom:170px;
+  width: 500px;
+  align-items: center;
+  justify-content: center;
 }
-.footer h6{
-    width: 400px;
-    margin-bottom: 10px;
-    color: green;
-}
+
 .footer-social{
   position: relative;
-  bottom: 200px;
+  bottom: 1px;
   width: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .footer-social a i{
-  color:#0f0c27;
+  color:#000000;
   font-size: 25px;
   margin-left: 10px;
   text-align: center;
@@ -599,37 +602,66 @@ form textarea {
   color: #fff;
   transition: all 0.3s ease-in-out;
 }
-.footerh2{
-  font-size: 20px;
-  position: absolute;
-  top: calc(100% - 100px);  
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.foermedia {
-  position: absolute;
-  bottom: 250px;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  width: 300px;
-}
+@media (max-width: 767px) {
+  .footer {
+    height: 300px;
+  }
 
+  .footer h2 {
+    font-size: 30px;
+    bottom: auto;
+    text-align: center;
+    margin-bottom: 20px;
+    width: auto;
+    position: static;
+  }
 
+  .footer-social {
+    bottom: auto;
+    position: static;
+    width: auto;
+    bottom: 0px;
+  }
+
+  .footer-social a i {
+    color: #000000;
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    bottom: 40px;
+  }
+
+  .footer-social a {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 70px;
+    margin-top: 10px;
+  }
+
+  .foermedia {
+    bottom: auto;
+    position: static;
+    width: auto;
+    margin-top: 20px;
+  }
+}
 
 .copyright {
   position: absolute;
   bottom: 5px;
-  left: 0;
   padding: 20px;
   text-align: center;
   color: #ffffff;
-  margin-left: 10px;
   margin-top: 20px;
+  width: 1366px;
+  justify-content: center;
+  align-items: center;
 }
 .copyright p{
   margin-right: 500px;
+  margin-left: 400px;
+  width: 500px;
 }
 .copyright a{
   color: green;
@@ -1598,42 +1630,4 @@ button {
 }
 [data-title] {
   position: relative;
-}
-
-
-.quick-nav {
-  background-color: #0f0c27;
-  padding: 20px 0;
-  text-align: left; /* Add this line to align the menu to the left */
-  margin-bottom: 30px;
-  margin-right: 800px;
-}
-
-.quick-nav ul {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 5px;
-  list-style-type: circle;
-}
-
-.quick-nav li {
-  margin: 0;
-  padding: 0;
-  text-align: left;
-  list-style: '>';
-  font-size: 15px;
-  margin-right: 20px;
-}
-
-.quick-nav a {
-  display: block;
-  padding: 10px;
-  text-decoration: none;
-  color: #fff;
-  transition: all 0.3s ease-in-out;
-}
-
-.quick-nav a:hover {
-  color: #f9d29b;
-  background-color: #1c1c1c;
 }
