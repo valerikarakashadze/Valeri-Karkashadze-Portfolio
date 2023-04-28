@@ -11,12 +11,6 @@
   font-family: "Poppins", sans-serif;
   
 }
-@media (max-width: 767px) {
-  body {
-    width: 356px;
-    margin: 0 auto;
-  }
-}
 :root {
   --main-color: #033a80;
   --bg-color: #fff;
@@ -73,11 +67,11 @@ header.shadow {
   box-shadow: 0 0 4px rgb(14 55 54 / 15%);
   width: 100%;
 }
-@media only screen and (max-width: 767px) {
-  header {
-    padding: 10px 3%;
-  }
-}
+@media (max-width: 767px) {
+  .header.shadow {
+    box-shadow: 0 0 4px rgb(14 55 54 / 15%);
+    width: 390px;
+  }}
 
 .logo {
   font-size: 1.61rem;
@@ -133,8 +127,7 @@ header.shadow {
   50% { border-color:  #033a80 }
 }
 
-/* Home Section */
-
+/* Home's CSS */
 .home {
   position: relative;
   width: 100%;
@@ -166,7 +159,6 @@ header.shadow {
   font-weight: 400;
   margin: 0.7rem 0 1rem;
 }
-
 @media (max-width: 767px) {
   .home {
     grid-template-columns: 1fr;
@@ -206,7 +198,7 @@ header.shadow {
   background: var(--hover);
 }
  
-/* Abour Section */
+/* About's CSS */
 
 .about-container {
   display: grid;
@@ -264,7 +256,7 @@ header.shadow {
   }
 }
 
-  /* Slills Section */
+/* Skill's CSS */
 
 .skills-container {
   display: grid;
@@ -603,7 +595,6 @@ form textarea {
   cursor: pointer;
   background: #0f0c27;
   color: #fff;
-  border: white 1px solid;
   justify-content: center;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -616,10 +607,10 @@ form textarea {
   display: grid;
   place-items: center;
   padding: 20px;
+  background: #0f0c27;
   color: #ffffff;
   height: 260px;
   width: 100%;
-  background-color: #0f0c27;
 }
 .footer h2 {
   font-size: 50px;
@@ -663,8 +654,7 @@ form textarea {
 @media (max-width: 767px) {
   .footer {
     height: 300px;
-    width: 100%;
-    margin-left: -17px;
+    width: 451px;
   }
 
   .footer h2 {
@@ -677,10 +667,10 @@ form textarea {
   }
 
   .footer-social {
+    bottom: auto;
     position: static;
-    width: 356px;
+    width: auto;
     bottom: 0px;
-    margin-left: -21px;
   }
 
   .footer-social a i {
@@ -714,22 +704,13 @@ form textarea {
   text-align: center;
   color: #ffffff;
   margin-top: 20px;
-  width: 400px;
+  width: 100%;
   justify-content: center;
   align-items: center;
 }
 .copyright p{
   width: 400px;
 }
-@media (max-width: 768px) {
-  .copyright p{
-    width: 330px;
-  }
-  .copyright{
-    width: 356px;
-  }
-}
-
 .copyright a{
   color: green;
 }
@@ -738,7 +719,7 @@ form textarea {
 @media (max-width: 991px) {
   header {
     padding: 18px 4%;
-    width: 356px;
+    width: 390px;
   }
   section {
     padding: 50px 4%;
@@ -751,9 +732,6 @@ form textarea {
   }
 }
 @media (max-width: 768px) {
-  body{
-    width: 356px;
-  }
   :root {
     --big-font: 2.4rem;
     --medium-font: 1.2rem;
@@ -779,9 +757,9 @@ form textarea {
   }
   .navbar.active {
     top: 100%;
-    width: 100%;
   }
   .navbar a {
+    padding: 1.5rem;
     display: block;
     background: var(--bg-color);
   }
@@ -851,11 +829,6 @@ form textarea {
   }
   .contact-button{
     margin-left: 25%;
-  }
-}
-@media screen and (max-width: 480px) {
-  body {
-    width: 356px;
   }
 }
 
@@ -1145,7 +1118,7 @@ form textarea {
     position: absolute;
     top: 0;
     left: 0;
-    border: 2px solid #181d3885;
+    border: 2px solid #181d38;
     height: 30px;
     width: 30px;
     border-radius: 50px;
@@ -1160,13 +1133,13 @@ form textarea {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color:rgba(138, 138, 138, 0.24);
+    background-color:rgba(138, 138, 138, 0.692);
     height: 20px;
     width: 20px;
     border-radius: 50px;
   }
   .cursor::before {
-    background-color: rgba(0, 0, 0, 0.315);
+    background-color: rgb(0, 0, 0);
   }
   .cursor.click::before {
     animation: click 1s ease forwards;
@@ -1408,9 +1381,6 @@ td {
   margin-bottom: 70px;
   position: relative;
 }
-
-
-
 
 .sectionClassProject {
   position: relative;
@@ -1670,11 +1640,11 @@ footer p strong {
 }
 
 button {
-  background-color: rgba(128, 128, 128, 0.151);
+  background-color: rgba(128, 128, 128, 0.568);
   border: none;
   font-size: 24px;
   cursor: pointer;
-  color: #00000093;
+  color: #ffffff79;
   width: 50px;
   height: 70px;
 }
@@ -1700,8 +1670,6 @@ button {
   transform: translateY(0);
   opacity: 1;
 }
-
-
 
 .alert {
   background-color: green;
