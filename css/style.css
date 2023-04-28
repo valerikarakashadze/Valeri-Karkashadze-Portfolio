@@ -11,6 +11,12 @@
   font-family: "Poppins", sans-serif;
   
 }
+@media (max-width: 767px) {
+  body {
+    width: 356px;
+    margin: 0 auto;
+  }
+}
 :root {
   --main-color: #033a80;
   --bg-color: #fff;
@@ -53,7 +59,6 @@ header {
   position: fixed;
   width: 100%;
   top: 0;
-  right: 0;
   z-index: 1000;
   display: flex;
   align-items: center;
@@ -68,6 +73,12 @@ header.shadow {
   box-shadow: 0 0 4px rgb(14 55 54 / 15%);
   width: 100%;
 }
+@media only screen and (max-width: 767px) {
+  header {
+    padding: 10px 3%;
+  }
+}
+
 .logo {
   font-size: 1.61rem;
   font-weight: 600;
@@ -122,6 +133,7 @@ header.shadow {
   50% { border-color:  #033a80 }
 }
 
+/* Home Section */
 
 .home {
   position: relative;
@@ -154,6 +166,23 @@ header.shadow {
   font-weight: 400;
   margin: 0.7rem 0 1rem;
 }
+
+@media (max-width: 767px) {
+  .home {
+    grid-template-columns: 1fr;
+  }
+
+  .home-text {
+    text-align: center;
+  }
+
+  .home-img {
+    order: 3;
+  }
+  .typewriter{
+    margin-left: 20%;
+  }
+}
 .social {
   display: flex;
   flex-direction: column;
@@ -177,6 +206,7 @@ header.shadow {
   background: var(--hover);
 }
  
+/* Abour Section */
 
 .about-container {
   display: grid;
@@ -209,6 +239,33 @@ header.shadow {
   font-weight: 400;
   margin-left: 1rem;
 }
+@media (max-width: 767px) {
+  .about-container {
+    grid-template-columns: 1fr;
+  }
+
+  .information {
+    margin:10px;
+  }
+
+  .information .info-box {
+    margin-bottom: 1rem;
+  }
+
+  .information .info-box .bx {
+    font-size: 20px;
+  }
+
+  .information .info-box span {
+    font-size: 14px;
+  }
+  .about-text{
+    margin-left: 20px;
+  }
+}
+
+  /* Slills Section */
+
 .skills-container {
   display: grid;
   gap: 30px;
@@ -546,6 +603,7 @@ form textarea {
   cursor: pointer;
   background: #0f0c27;
   color: #fff;
+  border: white 1px solid;
   justify-content: center;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -558,10 +616,10 @@ form textarea {
   display: grid;
   place-items: center;
   padding: 20px;
-  background: #0f0c27;
   color: #ffffff;
   height: 260px;
   width: 100%;
+  background-color: #0f0c27;
 }
 .footer h2 {
   font-size: 50px;
@@ -605,7 +663,7 @@ form textarea {
 @media (max-width: 767px) {
   .footer {
     height: 300px;
-    width: 451px;
+    width: 100%;
   }
 
   .footer h2 {
@@ -618,10 +676,10 @@ form textarea {
   }
 
   .footer-social {
-    bottom: auto;
     position: static;
-    width: auto;
+    width: 356px;
     bottom: 0px;
+    margin-left: -21px;
   }
 
   .footer-social a i {
@@ -655,13 +713,22 @@ form textarea {
   text-align: center;
   color: #ffffff;
   margin-top: 20px;
-  width: 100%;
+  width: 400px;
   justify-content: center;
   align-items: center;
 }
 .copyright p{
   width: 400px;
 }
+@media (max-width: 768px) {
+  .copyright p{
+    width: 330px;
+  }
+  .copyright{
+    width: 356px;
+  }
+}
+
 .copyright a{
   color: green;
 }
@@ -670,6 +737,7 @@ form textarea {
 @media (max-width: 991px) {
   header {
     padding: 18px 4%;
+    width: 356px;
   }
   section {
     padding: 50px 4%;
@@ -682,6 +750,9 @@ form textarea {
   }
 }
 @media (max-width: 768px) {
+  body{
+    width: 356px;
+  }
   :root {
     --big-font: 2.4rem;
     --medium-font: 1.2rem;
@@ -707,9 +778,9 @@ form textarea {
   }
   .navbar.active {
     top: 100%;
+    width: 100%;
   }
   .navbar a {
-    padding: 1.5rem;
     display: block;
     background: var(--bg-color);
   }
@@ -779,6 +850,11 @@ form textarea {
   }
   .contact-button{
     margin-left: 25%;
+  }
+}
+@media screen and (max-width: 480px) {
+  body {
+    width: 356px;
   }
 }
 
@@ -1068,7 +1144,7 @@ form textarea {
     position: absolute;
     top: 0;
     left: 0;
-    border: 2px solid #181d38;
+    border: 2px solid #181d3885;
     height: 30px;
     width: 30px;
     border-radius: 50px;
@@ -1083,13 +1159,13 @@ form textarea {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color:rgba(138, 138, 138, 0.692);
+    background-color:rgba(138, 138, 138, 0.24);
     height: 20px;
     width: 20px;
     border-radius: 50px;
   }
   .cursor::before {
-    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.315);
   }
   .cursor.click::before {
     animation: click 1s ease forwards;
@@ -1331,6 +1407,9 @@ td {
   margin-bottom: 70px;
   position: relative;
 }
+
+
+
 
 .sectionClassProject {
   position: relative;
@@ -1590,11 +1669,11 @@ footer p strong {
 }
 
 button {
-  background-color: rgba(128, 128, 128, 0.568);
+  background-color: rgba(128, 128, 128, 0.151);
   border: none;
   font-size: 24px;
   cursor: pointer;
-  color: #ffffff79;
+  color: #00000093;
   width: 50px;
   height: 70px;
 }
@@ -1620,6 +1699,8 @@ button {
   transform: translateY(0);
   opacity: 1;
 }
+
+
 
 .alert {
   background-color: green;
