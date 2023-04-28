@@ -655,7 +655,14 @@ form textarea {
   text-align: center;
   color: #ffffff;
   margin-top: 20px;
-  width: 100%;
+  width: 1366px;
+  justify-content: center;
+  align-items: center;
+}
+.copyright p{
+  margin-right: 500px;
+  margin-left: 400px;
+  width: 500px;
 }
 .copyright a{
   color: green;
@@ -962,8 +969,8 @@ form textarea {
     position: fixed;
     bottom: 20px;
     right: 50%;
-    height: 70px;
-    width: 70px;
+    height: 60px;
+    width: 60px;
     display: none;
     place-items: center;
     border-radius: 50%;
@@ -1585,13 +1592,13 @@ footer p strong {
 }
 
 button {
+  background-color: rgba(128, 128, 128, 0.568);
   border: none;
   font-size: 24px;
   cursor: pointer;
-  color:#0f0c27;
+  color: #ffffff79;
   width: 50px;
   height: 70px;
-  background-color: #9191914f;
 }
 
 .prev {
