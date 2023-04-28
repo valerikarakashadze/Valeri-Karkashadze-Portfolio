@@ -664,6 +664,7 @@ form textarea {
   .footer {
     height: 300px;
     width: 100%;
+    margin-left: -17px;
   }
 
   .footer h2 {
