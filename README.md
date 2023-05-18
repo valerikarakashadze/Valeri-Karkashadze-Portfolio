@@ -9,7 +9,10 @@ I have been gaining experience since 2022, working on various projects, both per
 If you have any inquiries, suggestions, or collaboration opportunities, feel free to reach out to me. You can contact me via:
 
 Email: valerikarkashadze2002@
-LinkedIn: [[My linkedIn page]](https://www.linkedin.com/in/valerikarkashadze/)
+[[My linkedIn]](https://www.linkedin.com/in/valerikarkashadze/)
+[[[My Facebook]](https://www.facebook.com/valeri.qarqashadze/)
+[[[My portfolio]](http://valerikarkashadze.com/)
+
 
 I am always open to new ideas and exciting projects. Let's connect and work together!
 
