@@ -740,14 +740,15 @@ textarea {
     border-radius: 50px;
     position: fixed;
     bottom: 30px;
-    right: 50%;
-    transition: background-color .3s, 
-    opacity .5s, visibility .5s;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: background-color .3s, opacity .5s, visibility .5s;
     opacity: 0;
     visibility: hidden;
     z-index: 1000;
-    border: 1px solid black
+    border: 1px solid black;
   }
+  
   #button::after {
     content: "\f077";
     font-family: FontAwesome;
@@ -757,17 +758,21 @@ textarea {
     line-height: 50px;
     color: #fff;
   }
+  
   #button:hover {
     cursor: pointer;
     background-color: #160075;
   }
+  
   #button:active {
     background-color: #555;
   }
+  
   #button.show {
     opacity: 1;
     visibility: visible;
-  }  
+  }
+  
 
   /* Scroll animation */
 
